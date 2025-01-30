@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+    "files.autoSave": "afterDelay",
+    "editor.fontLigatures": true,
+    "editor.multiCursorModifier": "alt",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "emmet.includeLanguages": {
+      "typescript": "typescriptreact",
+      "javascript": "javascriptreact"
+    },
+    "emmet.showSuggestionsAsSnippets": true,
+    "typescript.format.semicolons": "insert",
+    "editor.tabSize": 2 //standard react use 2 spaces
+  }
+}
