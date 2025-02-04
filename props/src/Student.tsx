@@ -1,10 +1,11 @@
 interface Props {
-  name: string;
-  age: number;
+  name?: string;
+  age?: number;
   isStudent?: boolean;
 }
 
-const Student = ({ name, age, isStudent = false }: Props) => {
+                  //defualt values for props
+const Student = ({ name="Guest", age=0, isStudent = false }: Props) => {
   return (
     <div className="student">
       <p>Name: {name}</p>
