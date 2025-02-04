@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import Button from "./Button"
+import { MouseEvent } from "react";
 function App() {
-  const [count, setCount] = useState(0)
+  let count: number = 0;
+  const handleClick = (name:string) =>{
+    count++;
+    if (count < 3){
+      console.log(`${name} clicked ${count} times!`)
+    }
+    else{
+      console.log('Ouch! Stop Clicking me');
+    }
+  }
+
+  const handleDoubleClick = (e:MouseEvent) => {
+    console.log("Double Clicked!")
+    e.currentTarget.textContent="Woi Stopped!"
+    if (count > 5){
+      const target = e.target as HTMLButtonElement;
+      Object.assign(target.style, {
+        display: "None"
+      });
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Button
+        onClick={() => handleClick("Simon")}
+        onDoubleClick={handleDoubleClick}
+      />
     </>
-  )
+  );
 }
 
 export default App
