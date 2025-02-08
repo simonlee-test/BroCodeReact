@@ -1,9 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext} from "react";
 import ComponentB from "./ComponentB"
 
 export const UserContext = createContext<string| null>(null);
 const ComponentA = () => {
-  const [user, setUser] = useState("Simone")
+  let user = "Simone"
   
   return (
     <div className="box">ComponentA
